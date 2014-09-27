@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}{% endblock %}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="" />
+        <meta name="keywords" content=""/>
+        <meta name="author" lang="fr" content="Marc" />
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css" />
+        <link rel="shortcut icon" href="/images/favicon.png" />
+        <!--[if lte IE 8]>
+            <script charset="utf-8" type="text/javascript" src="/js/html5shiv.js"></script>
+            <script charset="utf-8" type="text/javascript" src="/js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="navbar-inverse navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="./"><img src="/images/logo.png" /> Marc Léaument</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li{% if app.request.getRequestUri() == '/' %} class="active" {% endif %}><a href="/">Accueil</a></li>
+                        <li{% if app.request.getRequestUri() == '/realization/' %} class="active" {% endif %}><a href="/realization">Réalisations</a></li>
+                        <li{% if app.request.getRequestUri() == '/career/' %} class="active" {% endif %}><a href="/career">Curriculum Vitae</a></li>
+                        <li{% if app.request.getRequestUri() == '/services/' %} class="active" {% endif %}><a href="/services">Services</a></li>
+                        <li{% if app.request.getRequestUri() == '/contact/' %} class="active" {% endif %}><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="sectionTitle">
+                <h1>{% block bigTitle %}{% endblock %}<span></span></h1>
+                <h2>{% block subTitle %}{% endblock %}</h2>
+            </div>
+            {% block container %}
+            {% endblock %}
+        </div>
+
+        <div id="borderFooter"></div>
+        <footer>
+            <div class="container-fluid">
+                <div class="row text-center">
+                    <span class="name">Marc Léaument - 2014</span>
+                </div>
+                <div class="row margin text-center">
+                    <ul class="footer-nav">
+                        <li class="borderRight"><a href="/">Accueil</a></li>
+                        <li class="borderRight"><a href="/realization">Réalisations</a></li>
+                        <li class="borderRight"><a href="/career">CV</a></li>
+                        <li class="borderRight"><a href="/services">Services</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    {% block footJS  %}
+        <script charset="utf-8" type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+        <script charset="utf-8" type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script charset="utf-8" type="text/javascript" src="/js/main.js?v=1"></script>
+    {% endblock %}
+    </body>
+</html>

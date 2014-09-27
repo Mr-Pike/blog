@@ -1,0 +1,73 @@
+{% extends "./layout/layout.html.twig" %}
+
+{% block title %}{{ parent() }}Contact{% endblock %}
+
+{% block bigTitle %}Me contacter{% endblock %}
+{% block subTitle %}Une question, un renseignement, un projet, ...{% endblock %}
+
+{% block container %}
+    <div class="row margin">
+        <div id="contactForm" class="col-sm-6">
+            <h3>Envoyer un message</h3>
+            <div class="alert alert-success">
+                <span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;Merci, votre message a bien été transmis.
+            </div>
+            <div class="alert alert-danger">
+                <span class="glyphicon glyphicon-remove"></span><span id="errors"></span>
+            </div>
+            <form id="contact" role="form" method="post">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                        <input name="user" class="form-control" type="text" placeholder="Nom et prénom" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                        <input name="mail" class="form-control" type="email" placeholder="Adresse e-mail" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="fa fa-tag"></i></div>
+                        <input name="object" class="form-control" type="text" placeholder="Objet" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="fa fa-comment"></i></div>
+                        <textarea name="message" class="form-control" rows="7" placeholder="Message" required></textarea>
+                    </div>
+                </div>
+                <button type="submit" name="submit" class="btn btn-md btn-primary">
+                    <span class="fa fa-location-arrow"></span> Envoyer
+                </button>
+            </form>
+        </div>
+        <div class="col-sm-6 moreInfo">
+            <h3>Plus d'informations</h3>
+                <p>
+                    <span id="name">Marc LEAUMENT<br /></span>
+                    Analyste & Développeur logiciels / web <br />
+                    Dépannage & Maintenance informatique
+                </p>
+                <p>
+                    <i class="fa fa-map-marker fa-fw"></i> 154, avenue de Saint-Médard<br />
+                    33320 EYSINES <br />
+
+                    <i class="fa fa-envelope fa-fw"></i>
+                    <a href="mailto:marc.leaument@gmail.com"> marc.leaument@gmail.com</a>
+                </p>
+                <p class="text-justify">
+                    N'hésitez pas à remplir le formulaire pour toute question, renseignement etc. <br />
+                    Si vous ne souhaitez me contacter autrement que par le formulaire, vous pouvez également m'envoyer un mail à l'adresse ci-dessus. Je ferai en sorte de vous répondre dans les meilleurs délais.
+                </p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footJS %}
+    {{ parent() }}
+    <script charset="utf-8" type="text/javascript" src="/js/contact.js"></script>
+{% endblock %}
