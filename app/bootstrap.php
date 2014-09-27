@@ -34,5 +34,23 @@
     $app->mount("/services", new app\controller\ServicesController());
     $app->mount("/contact", new app\controller\ContactController());
 
+    // Manage Errors.
+    $app->error(function (\Exception $e, $code) use ($app) {
+
+        switch($code) {
+            case 404:
+                return $app["twig"]->render("/error/404.html.twig");
+                break;
+
+            case 405:
+                return $app["twig"]->render("/error/405.html.twig");
+                break;
+
+            default:
+                return $app["twig"]->render("/error/other.html.twig");
+                break;
+        }
+    });
+
     // Launch application.
     $app->run();
