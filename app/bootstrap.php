@@ -16,9 +16,16 @@
         'twig.options' => array('cache' => dirname(__DIR__).'/cache', 'strict_variables' => true, 'debug' => true)
     ));
 
-    /*$app->before(function (Symfony\Component\HttpFoundation\Request $request) use ($app) {
-        $app['twig']->addGlobal('current_page', $request->getRequestUri());
-    });*/
+    // Add Swift Mailer service.
+    $app->register(new \Silex\Provider\SwiftmailerServiceProvider());
+    $app['swiftmailer.options'] = array(
+        'host'       => $config['swiftmailer']['host'],
+        'port'       => $config['swiftmailer']['port'],
+        'username'   => $config['swiftmailer']['username'],
+        'password'   => $config['swiftmailer']['password'],
+        'encryption' => $config['swiftmailer']['encryption'],
+        'auth_mode'  => $config['swiftmailer']['auth_mode']
+    );
 
     // Mount routers.
     $app->mount("/", new app\controller\IndexController());
