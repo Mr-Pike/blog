@@ -35,7 +35,7 @@
     $app->mount("/contact", new app\controller\ContactController());
 
     // Manage Errors.
-    $app->error(function (\Exception $e, $code) use ($app) {
+    /*$app->error(function (\Exception $e, $code) use ($app) {
 
         switch($code) {
             case 404:
@@ -50,7 +50,7 @@
                 return $app["twig"]->render("/error/other.html.twig");
                 break;
         }
-    });
+    });*/
 
     // Launch application.
     $app->run();

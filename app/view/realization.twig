@@ -3,8 +3,85 @@
 {% block title %}{{ parent() }}Réalisations{% endblock %}
 
 {% block bigTitle %}Réalisations{% endblock %}
-{% block subTitle %}Mes réalisations lol{% endblock %}
+{% block subTitle %}Projets réalisés en entreprise, à ma propre initiative, ...{% endblock %}
 
 {% block container %}
+    <div class="row realization">
+        <div class="project col-sm-6 col-lg-4">
+            <div class="content">
+                <img class="img-responsive" src="/images/LoisirsEncheres.png" alt="Loisirs Enchères" />
+                <span class="title">Loisirs Enchères</span>
+                <span class="info">Site de ventes aux enchères. Il propose de nombreux lots à remporter allant d'un dîner romantique à un parc d'attraction.</span>
+                <span class="more"> <a class="btn btn-lg btn-primary" role="button" href="#" target="_blank"> En savoir +</a></span>
+            </div>
+        </div>
 
+        <div class="project col-sm-6 col-lg-4">
+            <div class="content">
+                <img class="img-responsive" src="/images/GarageDeLaTour.png" alt="Garage de la Tour" />
+                <span class="title">Garage de la Tour</span>
+                <span class="info">Site regroupant les véhicules en vente pour le garage de la Tour ainsi que diverses informations pratiques.</span>
+                <span class="more"> <a class="btn btn-lg btn-primary" role="button" href="#" target="_blank"> En savoir +</a></span>
+            </div>
+        </div>
+
+        <div class="project col-sm-6 col-lg-4">
+            <div class="content">
+                <img class="img-responsive" src="/images/SikaRembourse.png" alt="Sika Rembourse"/>
+                <span class="title">Sika Rembourse</span>
+                <span class="info">Site permettant à l'utilisateur de s'inscrire à un tirage au sort organisé par Sika.</span>
+                <span class="more"> <a class="btn btn-lg btn-primary" role="button" href="#" target="_blank"> En savoir +</a></span>
+            </div>
+        </div>
+
+        <div class="project col-sm-6 col-lg-4">
+            <div class="content">
+                <img class="img-responsive" src="/images/Moka.png" alt="Moka" />
+                <span class="title">Moka</span>
+                <span class="info">Site de ventes aux enchères. Il propose de nombreux lots à remporter allant d'un dîner romantique à un parc d'attraction.</span>
+                <span class="more"> <a class="btn btn-lg btn-primary" role="button" href="#
+                " target="_blank"> En savoir +</a></span>
+            </div>
+        </div>
+
+        <div class="project col-sm-6 col-lg-4">
+            <div class="content">
+                <img class="img-responsive" src="/images/EmballerCestBipe.png" alt="Emballer c'est bipé"/>
+                <span class="title">Garage de la Tour</span>
+                <span class="info">Site regroupant les véhicules en vente dans un garage avec diverses informations.</span>
+                <span class="more"> <a class="btn btn-lg btn-primary" role="button" href="#" target="_blank"> En savoir +</a></span>
+            </div>
+        </div>
+
+        <div class="project col-sm-6 col-lg-4">
+            <div class="content">
+                <img class="img-responsive" src="/images/SummerBreakEdition.png" alt="Summer Break Edition"/>
+                <span class="title">Garage de la Tour</span>
+                <span class="info">Site regroupant les véhicules en vente dans un garage avec diverses informations.</span>
+                <span class="more"> <a class="btn btn-lg btn-primary" role="button" href="#" target="_blank"> En savoir +</a></span>
+            </div>
+        </div>
+
+        <div class="project col-sm-6 col-lg-4">
+            <div class="content">
+                <img class="img-responsive" src="/images/KingBelote.png" alt="King Belote" />
+                <span class="title">King Belote</span>
+                <span class="info">Site regroupant les véhicules en vente dans un garage avec diverses informations.</span>
+                <span class="more"> <a class="btn btn-lg btn-primary" role="button" href="#" target="_blank"> En savoir +</a></span>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row realization margin">
+
+    </div>
+
+
+{% endblock %}
+
+{% block footJS %}
+    {{ parent() }}
+    <script charset="utf-8" type="text/javascript" src="/js/realization.js"></script>
 {% endblock %}

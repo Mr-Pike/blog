@@ -28,17 +28,17 @@ namespace app\controller {
             // Return informations.
             $callback = array();
             $callback['errors'] = '';
+            $callback['send'] = 0;
 
             // Make some verifications.
-            if(trim($data['user']) == '') $callback['errors'] .= '- Votre nom est vide <br />';
-            if(!filter_var($data['mail'], FILTER_VALIDATE_EMAIL)) $callback['errors'] .= '- Votre adresse mail n\'est pas valide <br />';
-            if(trim($data['object']) == '') $callback['errors'] .= '- Votre objet est vide <br />';
-            if(trim($data['message']) == '') $callback['errors'] .= '- Votre message est vide <br />';
+            if(trim($data['user']) == '') $callback['errors'] .= '- Votre nom n\'est pas renseigné <br />';
+            if(!filter_var($data['mail'], FILTER_VALIDATE_EMAIL)) $callback['errors'] .= '- Votre adresse mail n\'est pas renseignée <br />';
+            if(trim($data['object']) == '') $callback['errors'] .= '- Votre objet n\'est pas renseigné <br />';
+            if(trim($data['message']) == '') $callback['errors'] .= '- Votre message n\'est pas renseigné <br />';
 
             // Check errors found.
             if($callback['errors'] != '') {
-                $callback['send'] = 0;
-                $callback['errors'] = 'Votre message n\'a pas été envoyé <br />' . $callback['errors'];
+                $callback['errors'] = 'Votre message n\'a pas été envoyé :<br />' . $callback['errors'];
             } else {
                 $message = \Swift_Message::newInstance()
                     ->setSubject('[website] - '. $data['object'])
