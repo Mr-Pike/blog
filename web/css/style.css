@@ -264,7 +264,6 @@ footer .name {
 }
 
 .realization .project .content{
-    display: inline-block;
     overflow: hidden;
     position: relative;
     background: #101010;
