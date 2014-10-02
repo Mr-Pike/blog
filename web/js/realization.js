@@ -6,7 +6,6 @@ $(document).ready(function() {
             $(this).find('img').fadeTo(500, 0.2, function() {
                 if(that.is(':hover')) {
                     that.find('.title, .info, .more').fadeIn();
-                    console.log('yo');
                 }
             });
         }, function() {
