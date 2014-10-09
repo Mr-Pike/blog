@@ -12,7 +12,7 @@ namespace app\controller {
     {
         public function contact(Application $app)
         {
-            return $app["twig"]->render("contact.twig");
+            return $app["twig"]->render("contact.twig", array('mail' => 'marc.leaument@gmail.com'));
         }
 
         /**
@@ -62,8 +62,8 @@ namespace app\controller {
         public function connect(Application $app)
         {
             $contact = $app['controllers_factory'];
-            $contact->match('/', array($this, 'contact'));
-            $contact->post('/validate', array($this, 'validate'));
+            $contact->match('/', array($this, 'contact'))->bind('contact.main');
+            $contact->post('/validate', array($this, 'validate'))->bind('contact.validate');
             return $contact;
         }
     }

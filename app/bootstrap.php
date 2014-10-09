@@ -10,10 +10,13 @@
     $app['config'] = $config;
     $app['debug'] = $app['config']['debug'];
 
+    // URL Generator Service.
+    $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+
     // Add twig service.
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
         "twig.path" => dirname(__DIR__) . "/app/view",
-        'twig.options' => array('cache' => dirname(__DIR__).'/cache', 'strict_variables' => true, 'debug' => true)
+        'twig.options' => array('cache' => dirname(__DIR__).'/cache', 'strict_variables' => true, 'debug' => $app['debug'])
     ));
 
     // Add Swift Mailer service.

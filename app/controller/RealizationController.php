@@ -15,7 +15,7 @@ namespace app\controller {
         public function connect(Application $app)
         {
             $realization = $app['controllers_factory'];
-            $realization->match('/', array($this, 'realization'), 'realization');
+            $realization->match('/', array($this, 'realization'), 'realization')->bind('realization.main');
             return $realization;
         }
     }

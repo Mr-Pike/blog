@@ -15,7 +15,7 @@ namespace app\controller {
         public function connect(Application $app)
         {
             $services = $app['controllers_factory'];
-            $services->match('/', array($this, 'services'), 'services');
+            $services->match('/', array($this, 'services'), 'services')->bind('services.main');
             return $services;
         }
     }

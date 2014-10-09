@@ -13,7 +13,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: './validate',
+            url: url,
             data: data,
             encoding: 'utf-8',
             dataType: 'json',

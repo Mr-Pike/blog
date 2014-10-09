@@ -32,11 +32,11 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li{% if app.request.getRequestUri() == '/' %} class="active" {% endif %}><a href="/">Accueil</a></li>
-                        <li{% if app.request.getRequestUri() == '/realization/' %} class="active" {% endif %}><a href="/realization">Réalisations</a></li>
-                        <li{% if app.request.getRequestUri() == '/career/' %} class="active" {% endif %}><a href="/career">Curriculum Vitae</a></li>
-                        <li{% if app.request.getRequestUri() == '/services/' %} class="active" {% endif %}><a href="/services">Services</a></li>
-                        <li{% if app.request.getRequestUri() == '/contact/' %} class="active" {% endif %}><a href="/contact">Contact</a></li>
+                        <li{% if app.request.getRequestUri() == path('index.main') %} class="active" {% endif %}><a href="{{ path('index.main') }}">Accueil</a></li>
+                        <li{% if app.request.getRequestUri() == path('realization.main') %} class="active" {% endif %}><a href="{{ path('realization.main') }}">Réalisations</a></li>
+                        <li{% if app.request.getRequestUri() == path('career.main') %} class="active" {% endif %}><a href="{{ path('career.main') }}">Curriculum Vitae</a></li>
+                        <li{% if app.request.getRequestUri() == path('services.main') %} class="active" {% endif %}><a href="{{ path('services.main') }}">Services</a></li>
+                        <li{% if app.request.getRequestUri() == path('contact.main') %} class="active" {% endif %}><a href="{{ path('contact.main') }}">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -59,11 +59,11 @@
                 </div>
                 <div class="row margin text-center">
                     <ul class="footer-nav">
-                        <li class="borderRight"><a href="/">Accueil</a></li>
-                        <li class="borderRight"><a href="/realization">Réalisations</a></li>
-                        <li class="borderRight"><a href="/career">CV</a></li>
-                        <li class="borderRight"><a href="/services">Services</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li class="borderRight"><a href="{{ path('index.main') }}">Accueil</a></li>
+                        <li class="borderRight"><a href="{{ path('realization.main') }}">Réalisations</a></li>
+                        <li class="borderRight"><a href="{{ path('career.main') }}">Curriculum Vitae</a></li>
+                        <li class="borderRight"><a href="{{ path('services.main') }}">Services</a></li>
+                        <li><a href="{{ path('contact.main') }}">Contact</a></li>
                     </ul>
                 </div>
             </div>

@@ -16,7 +16,7 @@ namespace app\controller {
         public function connect(Application $app)
         {
             $index = $app['controllers_factory'];
-            $index->match('/', array($this, 'index'));
+            $index->match('/', array($this, 'index'))->bind('index.main');
             return $index;
         }
     }

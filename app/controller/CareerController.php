@@ -15,7 +15,7 @@ namespace app\controller {
         public function connect(Application $app)
         {
             $career = $app['controllers_factory'];
-            $career->match('/', array($this, 'career'));
+            $career->match('/', array($this, 'career'))->bind('career.main');
             return $career;
         }
     }

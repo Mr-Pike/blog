@@ -57,7 +57,7 @@
                     33320 EYSINES <br />
 
                     <i class="fa fa-envelope fa-fw"></i>
-                    <a href="mailto:marc.leaument@gmail.com"> marc.leaument@gmail.com</a>
+                    <a href="mailto:{{ mail }}"> {{ mail }}</a>
                 </p>
                 <p class="text-justify">
                     N'hésitez pas à remplir le formulaire pour toute question, renseignement etc. <br />
@@ -69,5 +69,8 @@
 
 {% block footJS %}
     {{ parent() }}
+    <script type="text/javascript" charset="utf-8">
+        var url = '{{ path('contact.validate') }}';
+    </script>
     <script charset="utf-8" type="text/javascript" src="/js/contact.js"></script>
 {% endblock %}
