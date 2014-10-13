@@ -1,0 +1,14 @@
+debug: true
+
+# Database.
+database:
+  host: test
+
+# Swiftmailer.
+swiftmailer:
+  host: smtp.gmail.com
+  port: 465
+  username: test
+  password: test
+  encryption: test
+  auth_mode: test
