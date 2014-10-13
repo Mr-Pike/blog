@@ -1,4 +1,6 @@
 <?php
+    use Symfony\Component\Yaml\Parser;
+
     $loader = require_once __DIR__ . '/../vendor/autoload.php';
     $loader->add("app", dirname(__DIR__));
 
@@ -6,8 +8,8 @@
     $app = new Silex\Application();
 
     // Include configuration file.
-    require_once 'config.php';
-    $app['config'] = $config;
+    $app['config'] = (new Parser())->parse(file_get_contents('../app/config.yml'));
+
     $app['debug'] = $app['config']['debug'];
 
     // URL Generator Service.
@@ -22,12 +24,12 @@
     // Add Swift Mailer service.
     $app->register(new \Silex\Provider\SwiftmailerServiceProvider());
     $app['swiftmailer.options'] = array(
-        'host'       => $config['swiftmailer']['host'],
-        'port'       => $config['swiftmailer']['port'],
-        'username'   => $config['swiftmailer']['username'],
-        'password'   => $config['swiftmailer']['password'],
-        'encryption' => $config['swiftmailer']['encryption'],
-        'auth_mode'  => $config['swiftmailer']['auth_mode']
+        'host'       => $app['config']['swiftmailer']['host'],
+        'port'       => $app['config']['swiftmailer']['port'],
+        'username'   => $app['config']['swiftmailer']['username'],
+        'password'   => $app['config']['swiftmailer']['password'],
+        'encryption' => $app['config']['swiftmailer']['encryption'],
+        'auth_mode'  => $app['config']['swiftmailer']['auth_mode']
     );
 
     // Mount routers.
