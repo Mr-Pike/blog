@@ -1,5 +1,5 @@
 <?php
-namespace app\controller {
+namespace src\controller {
 
     use Silex\Application;
     use Silex\ControllerProviderInterface;

@@ -2,7 +2,7 @@
     use Symfony\Component\Yaml\Parser;
 
     $loader = require_once __DIR__ . '/../vendor/autoload.php';
-    $loader->add("app", dirname(__DIR__));
+    $loader->add("src", dirname(__DIR__));
 
     // Instance Silex\Application.
     $app = new Silex\Application();
@@ -15,10 +15,22 @@
     // URL Generator Service.
     $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
-    // Add twig service.
+    // Add Twig service.
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
-        "twig.path" => dirname(__DIR__) . "/app/view",
+        "twig.path" => dirname(__DIR__) . "/src/view",
         'twig.options' => array('cache' => dirname(__DIR__).'/cache', 'strict_variables' => true, 'debug' => $app['debug'])
+    ));
+
+    // Add Doctrine service
+    $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
+        'db.options' => array(
+            'driver'   => $app['config']['database']['driver'],
+            'dbname'   => $app['config']['database']['dbname'],
+            'host'     => $app['config']['database']['host'],
+            'user'     => $app['config']['database']['user'],
+            'password' => $app['config']['database']['password'],
+            'charset'  => $app['config']['database']['charset']
+        )
     ));
 
     // Add Swift Mailer service.
@@ -33,11 +45,11 @@
     );
 
     // Mount routers.
-    $app->mount("/", new app\controller\IndexController());
-    $app->mount("/realization", new app\controller\RealizationController());
-    $app->mount("/career", new app\controller\CareerController());
-    $app->mount("/services", new app\controller\ServicesController());
-    $app->mount("/contact", new app\controller\ContactController());
+    $app->mount("/", new src\controller\IndexController());
+    $app->mount("/realization", new src\controller\RealizationController());
+    $app->mount("/career", new src\controller\CareerController());
+    $app->mount("/services", new src\controller\ServicesController());
+    $app->mount("/contact", new src\controller\ContactController());
 
     // Manage Errors.
     /*$app->error(function (\Exception $e, $code) use ($app) {
