@@ -42,12 +42,12 @@ body {
 
 .sectionTitle h1 span {
     position: absolute;
+    display: block;
     top: -7px;
     left: 0px;
-    display: block;
     width: 10px;
     height: 7px;
-    background: url(../images/sprite.png) no-repeat -40px -480px; /*TODO: Changer l'image*/
+    background: url(../images/right-triangle.png) no-repeat;
 }
 
 .sectionTitle h2 {

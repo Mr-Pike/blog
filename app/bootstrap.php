@@ -21,18 +21,6 @@
         'twig.options' => array('cache' => dirname(__DIR__).'/cache', 'strict_variables' => true, 'debug' => $app['debug'])
     ));
 
-    // Add Doctrine service
-    $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
-        'db.options' => array(
-            'driver'   => $app['config']['database']['driver'],
-            'dbname'   => $app['config']['database']['dbname'],
-            'host'     => $app['config']['database']['host'],
-            'user'     => $app['config']['database']['user'],
-            'password' => $app['config']['database']['password'],
-            'charset'  => $app['config']['database']['charset']
-        )
-    ));
-
     // Add Swift Mailer service.
     $app->register(new \Silex\Provider\SwiftmailerServiceProvider());
     $app['swiftmailer.options'] = array(
@@ -52,7 +40,7 @@
     $app->mount("/contact", new src\controller\ContactController());
 
     // Manage Errors.
-    /*$app->error(function (\Exception $e, $code) use ($app) {
+    $app->error(function (\Exception $e, $code) use ($app) {
 
         switch($code) {
             case 404:
@@ -67,7 +55,7 @@
                 return $app["twig"]->render("/error/other.html.twig");
                 break;
         }
-    });*/
+    });
 
     // Launch application.
     $app->run();
