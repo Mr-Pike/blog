@@ -34,9 +34,6 @@
 
     // Mount routers.
     $app->mount("/", new src\controller\IndexController());
-    $app->mount("/realization", new src\controller\RealizationController());
-    $app->mount("/career", new src\controller\CareerController());
-    $app->mount("/services", new src\controller\ServicesController());
     $app->mount("/contact", new src\controller\ContactController());
 
     // Manage Errors.

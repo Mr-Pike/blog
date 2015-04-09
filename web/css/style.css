@@ -1,3 +1,7 @@
+/*
+    FEUILLE DE STYLE CSS - MARC
+*/
+
 html {
     background: #222;
 }
@@ -187,6 +191,30 @@ footer .name {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#222222',GradientType=0 );
 }
 
+/* Index*/
+.carousel-caption {
+    text-shadow: none;
+}
+.carousel-caption h3 {
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, .7);
+    color: #0070C0;
+}
+
+.carousel-caption p {
+    background: rgba(0, 0, 0, .7);
+    color: #ffffff;
+}
+
+.carousel-indicators li {
+    background: rgba(0, 0, 0, .7);
+    border: 1px solid #000000;
+}
+
+.carousel-indicators .active {
+    background-color: #000000;
+}
+
 /* CV */
 .row .blackContainer {
     background: #101010;
@@ -223,13 +251,17 @@ footer .name {
     padding: 5px;
 }
 
-.row .contentContainer ul {
-    margin-bottom: 0;
-    padding-left: 15px;
-}
-
 .row.button {
     margin-top: 10px;
+}
+
+.row .date {
+    color: #0070C0;
+    font-weight: bold;
+}
+
+.row .languages {
+    color: #777777;
 }
 
 /* Services */

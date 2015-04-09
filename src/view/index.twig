@@ -2,7 +2,7 @@
 
 {% block title %}{{ parent() }}Accueil{% endblock %}
 
-{% block bigTitle %}Bienvenue !{% endblock %}
+{% block bigTitle %}Bienvenue{% endblock %}
 {% block subTitle %}Marc Léaument - Analyste & développeur / Maintenance & dépannage informatique{% endblock %}
 
 {% block container %}
@@ -13,24 +13,14 @@
                 <h2>Présentation</h2>
             </div>
             <div class="contentContainer">
-                <span>Bonjour à tous ! Je me présente Marc Léaument, j'ai 25 ans et je réside à Eysines près de Bordeaux. <br />
-                Depuis de nombreuses années, je consacre la plupart de mon temps à l'informatique. J'ai donc tout naturellement choisi d'orienter mes études dans ce domaine
-                mais plus précisément dans le développement d'applications. En effet, je suis attiré par l'apprentissage de nouveaux langages.</span>
+                <span>
+                    Bonjour à tous ! Je me présente Marc Léaument, j'ai 25 ans et je réside à Eysines près de Bordeaux. <br />
+                    Depuis de nombreuses années, je consacre la plupart de mon temps à l'informatique. J'ai donc tout naturellement choisi d'orienter mes études dans ce domaine
+                    mais plus précisément dans le développement d'applications. En effet, je suis attiré par l'apprentissage de nouveaux langages.
+                </span>
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="blueContainer">
-                <h2>Compétences</h2>
-            </div>
-            <div class="contentContainer">
-                <span>Etant développeur, </span>
-            </div>
-        </div>
-    </div>
-
 
     <div class="row">
         <div class="col-sm-12">
@@ -38,10 +28,78 @@
                 <h2>Quelques réalisations</h2>
             </div>
             <div class="contentContainer">
-                <span></span>
+                <div class="row center-block">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+
+                            <div class="carousel-inner" role="listbox">
+
+                                <div class="item active">
+                                    <img class="img-responsive" src="/images/GarageDeLaTourV3.png" alt="Garage de la Tour" width=""/>
+                                    <div class="carousel-caption">
+                                        <h3>Garage de la Tour v3</h3>
+                                        <p>Site regroupant l'ensemble des véhicules d'occasion</p>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img class="img-responsive" src="/images/LoisirsEncheres.png" alt="Loisirs Enchères" />
+                                    <div class="carousel-caption">
+                                        <h3>Loisirs Enchères</h3>
+                                        <p>Site de ventes aux enchères proposant de nombreux lots.</p>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img class="img-responsive" src="/images/SummerBreakEdition.png" alt="Summer Break Edition" />
+                                    <div class="carousel-caption">
+                                        <h3>Summer Break Edition</h3>
+                                        <p>Version de Candy Crush multijoueur.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Précédent</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Suivant</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row button centered">
+                    <div class="col-sm-12">
+                        <a class="btn btn-md btn-primary" role="button" href="{{ path('realization.main') }}"> <i class="glyphicon glyphicon-eye-open"></i>
+                            Plus de réalisations
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <span>
+                <br /><br />
+                Bonne visite !
+            </span>
+        </div>
+    </div>
+
+
 
 
 

@@ -1,0 +1,5 @@
+TODO :
+- Intégrer design:
+  - Logo
+  - Favicon
+- Compléter l'introduction
